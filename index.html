@@ -16,19 +16,18 @@
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 76px; background: var(--navy); border-bottom: 3px solid var(--red); }
-    .nav-logo img { height: 52px; width: auto; display: block; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: #e8a0a0; }
     .nav-donate { background: var(--red) !important; color: var(--white) !important; padding: 0.5rem 1.3rem; border-radius: 2px; }
-    .nav-photo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; }
+    .nav-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
 
     /* HERO */
     .hero { position: relative; height: 100vh; min-height: 680px; display: flex; align-items: flex-end; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(13,31,60,0.2) 0%, rgba(13,31,60,0.05) 40%, rgba(13,31,60,0.72) 68%, rgba(13,31,60,0.95) 100%); }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(13,31,60,0.3) 0%, rgba(13,31,60,0.1) 40%, rgba(13,31,60,0.72) 68%, rgba(13,31,60,0.95) 100%); }
     .hero-content { position: relative; z-index: 2; padding: 0 5rem 6rem; max-width: 900px; }
     .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
     .hero-tagline { font-size: clamp(1rem, 1.7vw, 1.2rem); font-weight: 300; color: rgba(255,255,255,0.88); line-height: 1.78; max-width: 540px; margin-bottom: 2.5rem; }
@@ -61,7 +60,6 @@
     /* VALUES */
     #values { background: var(--navy); padding: 7rem 5rem; }
     #values .section-title { color: var(--white); }
-    .values-intro { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.68); line-height: 1.75; max-width: 600px; margin-bottom: 3.5rem; }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
     .value-card { background: rgba(255,255,255,0.04); border-top: 3px solid var(--red); padding: 2.5rem 2rem; transition: background 0.2s; }
     .value-card:hover { background: rgba(255,255,255,0.08); }
@@ -116,7 +114,7 @@
 
     /* FOOTER */
     footer { background: #06101f; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid var(--red); flex-wrap: wrap; gap: 1.5rem; }
-    .footer-logo img { height: 40px; width: auto; }
+    .footer-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); }
     .footer-links { display: flex; gap: 2rem; list-style: none; }
     .footer-links a { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.8); }
@@ -130,6 +128,7 @@
 
     @media (max-width: 1024px) {
       nav { padding: 0 2rem; }
+      .nav-links { gap: 1.5rem; }
       .hero-content { padding: 0 3rem 5rem; }
       .intro-strip { padding: 2.5rem 3rem; }
       #about { grid-template-columns: 1fr; }
@@ -166,7 +165,7 @@
 <body>
 
   <nav>
-    <a href="#" class="nav-logo"><img src="websitelogo2.jpg" alt="Councillor Ty Hapworth" /></a>
+    <a href="#" class="nav-name">Ty Hapworth</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#values">Values</a></li>
@@ -175,7 +174,6 @@
       <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="#donate" class="nav-donate">Donate</a></li>
     </ul>
-    <img src="websitephoto.jpg" alt="Ty Hapworth" class="nav-photo" />
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -191,7 +189,7 @@
   </div>
 
   <section class="hero">
-    <img class="hero-bg" src="websitephoto.jpg" alt="Councillor Ty Hapworth" />
+    <img class="hero-bg" src="fullsize.jpg" alt="Salem Common at sunrise" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-name">Ty Hapworth</h1>
@@ -210,7 +208,7 @@
 
   <section id="about">
     <div class="about-photo">
-      <img src="HapworthHeadshot.jpg" alt="Ty Hapworth" />
+      <img src="heroshot.png" alt="Ty Hapworth" />
     </div>
     <div class="about-content">
       <h2>Meet Ty</h2>
@@ -338,7 +336,7 @@
   </section>
 
   <footer>
-    <div class="footer-logo"><img src="websitelogo2.jpg" alt="Councillor Ty Hapworth" /></div>
+    <div class="footer-name">Ty Hapworth</div>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#values">Values</a></li>
