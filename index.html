@@ -14,21 +14,23 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Source Sans 3', sans-serif; color: var(--navy); background: var(--off-white); overflow-x: hidden; }
 
+    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 76px; background: var(--navy); border-bottom: 3px solid var(--red); }
     .nav-logo img { height: 52px; width: auto; display: block; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: #e8a0a0; }
     .nav-donate { background: var(--red) !important; color: var(--white) !important; padding: 0.5rem 1.3rem; border-radius: 2px; }
+    .nav-photo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
 
+    /* HERO */
     .hero { position: relative; height: 100vh; min-height: 680px; display: flex; align-items: flex-end; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(13,31,60,0.2) 0%, rgba(13,31,60,0.05) 40%, rgba(13,31,60,0.72) 68%, rgba(13,31,60,0.95) 100%); }
     .hero-content { position: relative; z-index: 2; padding: 0 5rem 6rem; max-width: 900px; }
     .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
-    .hero-name span { display: block; font-family: 'Source Sans 3', sans-serif; font-size: clamp(0.75rem, 1.2vw, 0.9rem); font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-bottom: 0.6rem; }
     .hero-tagline { font-size: clamp(1rem, 1.7vw, 1.2rem); font-weight: 300; color: rgba(255,255,255,0.88); line-height: 1.78; max-width: 540px; margin-bottom: 2.5rem; }
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-red { display: inline-block; padding: 0.9rem 2rem; background: var(--red); color: var(--white); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s, transform 0.15s; }
@@ -36,6 +38,7 @@
     .btn-outline { display: inline-block; padding: 0.9rem 2rem; border: 2px solid rgba(255,255,255,0.5); color: var(--white); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; }
     .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
 
+    /* INTRO */
     .intro-strip { background: var(--navy); padding: 3rem 5rem; display: flex; align-items: center; gap: 2.5rem; }
     .intro-bar { width: 4px; height: 64px; background: var(--red); flex-shrink: 0; border-radius: 2px; }
     .intro-strip p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.78; max-width: 820px; }
@@ -45,6 +48,7 @@
     .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-bottom: 0.6rem; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--navy); line-height: 1.15; margin-bottom: 1.5rem; }
 
+    /* ABOUT */
     #about { display: grid; grid-template-columns: 5fr 7fr; min-height: 600px; }
     .about-photo { position: relative; overflow: hidden; background: var(--navy); }
     .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
@@ -54,6 +58,7 @@
     .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
     .tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); border: 1.5px solid var(--navy); padding: 0.3rem 0.75rem; border-radius: 1px; }
 
+    /* VALUES */
     #values { background: var(--navy); padding: 7rem 5rem; }
     #values .section-title { color: var(--white); }
     .values-intro { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.68); line-height: 1.75; max-width: 600px; margin-bottom: 3.5rem; }
@@ -64,39 +69,52 @@
     .value-title { font-size: 0.88rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.65rem; }
     .value-desc { font-size: 0.92rem; font-weight: 300; line-height: 1.72; color: rgba(255,255,255,0.6); }
 
-    #accomplishments { padding: 7rem 5rem; background: var(--off-white); }
-    .acc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--light-gray); border: 1px solid var(--light-gray); margin-top: 3rem; }
-    .acc-item { background: var(--off-white); padding: 2.5rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: background 0.2s; }
-    .acc-item:hover { background: var(--white); }
-    .acc-icon { width: 42px; height: 42px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; border-radius: 2px; }
-    .acc-text h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.4rem; }
-    .acc-text p { font-size: 0.95rem; line-height: 1.68; color: var(--text-mid); }
+    /* POLICY */
+    #policy { background: var(--off-white); padding: 7rem 5rem; }
+    .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .policy-card { background: var(--white); border-top: 3px solid var(--red); padding: 2rem 1.8rem; transition: box-shadow 0.2s; }
+    .policy-card:hover { box-shadow: 0 4px 24px rgba(13,31,60,0.1); }
+    .policy-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .policy-title { font-size: 0.88rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.6rem; }
+    .policy-desc { font-size: 0.92rem; line-height: 1.72; color: var(--text-mid); }
 
-    .photo-break { height: 360px; overflow: hidden; position: relative; }
-    .photo-break img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-    .photo-break-overlay { position: absolute; inset: 0; background: rgba(13,31,60,0.52); display: flex; align-items: center; justify-content: center; }
-    .photo-break-text { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 900; color: var(--white); text-align: center; line-height: 1.3; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    /* RECORD */
+    #accomplishments { padding: 7rem 5rem; background: var(--navy); }
+    #accomplishments .section-title { color: var(--white); }
+    .acc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-top: 3rem; }
+    .acc-item { background: rgba(255,255,255,0.03); padding: 2.5rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: background 0.2s; }
+    .acc-item:hover { background: rgba(255,255,255,0.07); }
+    .acc-icon { width: 42px; height: 42px; background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; border-radius: 2px; }
+    .acc-text h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.4rem; }
+    .acc-text p { font-size: 0.95rem; line-height: 1.68; color: rgba(255,255,255,0.6); }
 
-    #newsletter { background: var(--navy); padding: 6rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    #newsletter .section-label { color: rgba(255,120,120,0.8); }
-    #newsletter .section-title { color: var(--white); }
-    .newsletter-desc { font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.62); }
+    /* PROUD STRIP */
+    .proud-strip { background: var(--red); padding: 4rem 5rem; display: flex; align-items: center; justify-content: center; }
+    .proud-strip-text { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--white); text-align: center; line-height: 1.3; }
+
+    /* NEWSLETTER */
+    #newsletter { background: var(--off-white); padding: 6rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    #newsletter .section-title { color: var(--navy); }
+    .newsletter-desc { font-size: 1.05rem; line-height: 1.75; color: var(--text-mid); }
     .newsletter-form { display: flex; flex-direction: column; gap: 0.9rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-    .form-input { width: 100%; padding: 0.85rem 1rem; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.18); border-radius: 2px; color: var(--white); outline: none; transition: all 0.2s; }
-    .form-input::placeholder { color: rgba(255,255,255,0.32); }
-    .form-input:focus { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.11); }
+    .form-input { width: 100%; padding: 0.85rem 1rem; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; background: var(--white); border: 1.5px solid var(--light-gray); border-radius: 2px; color: var(--navy); outline: none; transition: all 0.2s; }
+    .form-input::placeholder { color: rgba(13,31,60,0.35); }
+    .form-input:focus { border-color: var(--navy); }
     .btn-red-full { width: 100%; padding: 0.95rem; background: var(--red); color: var(--white); font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; }
     .btn-red-full:hover { background: #aa1a1a; }
 
-    #donate { background: var(--off-white); padding: 7rem 5rem; text-align: center; }
-    .donate-desc { font-size: 1.1rem; font-weight: 300; color: var(--text-mid); line-height: 1.7; max-width: 520px; margin: 0 auto 3rem; }
+    /* DONATE */
+    #donate { background: var(--navy); padding: 7rem 5rem; text-align: center; }
+    #donate .section-title { color: var(--white); }
+    .donate-desc { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 520px; margin: 0 auto 3rem; }
     .donate-amounts { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-    .donate-amount { padding: 0.8rem 1.6rem; border: 2px solid rgba(13,31,60,0.25); color: var(--navy); font-weight: 700; font-size: 1rem; border-radius: 2px; cursor: pointer; background: none; font-family: 'Source Sans 3', sans-serif; transition: all 0.2s; }
-    .donate-amount:hover, .donate-amount.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .donate-amount { padding: 0.8rem 1.6rem; border: 2px solid rgba(255,255,255,0.25); color: var(--white); font-weight: 700; font-size: 1rem; border-radius: 2px; cursor: pointer; background: none; font-family: 'Source Sans 3', sans-serif; transition: all 0.2s; }
+    .donate-amount:hover, .donate-amount.active { background: var(--red); color: var(--white); border-color: var(--red); }
     .donate-btn { display: inline-block; padding: 1rem 3.5rem; background: var(--red); color: var(--white); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; }
     .donate-btn:hover { background: #aa1a1a; transform: translateY(-2px); }
 
+    /* FOOTER */
     footer { background: #06101f; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid var(--red); flex-wrap: wrap; gap: 1.5rem; }
     .footer-logo img { height: 40px; width: auto; }
     .footer-links { display: flex; gap: 2rem; list-style: none; }
@@ -104,6 +122,7 @@
     .footer-links a:hover { color: rgba(255,255,255,0.8); }
     .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.22); }
 
+    /* MOBILE */
     .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: var(--navy); z-index: 99; padding: 3rem 2.5rem; flex-direction: column; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.2rem 0; }
@@ -116,9 +135,8 @@
       #about { grid-template-columns: 1fr; }
       .about-photo { height: 420px; }
       .about-content { padding: 4rem 3rem; }
-      #values { padding: 5rem 3rem; }
-      .values-grid { grid-template-columns: 1fr 1fr; }
-      #accomplishments { padding: 5rem 3rem; }
+      #values, #policy, #accomplishments { padding: 5rem 3rem; }
+      .values-grid, .policy-grid { grid-template-columns: 1fr 1fr; }
       #newsletter { padding: 5rem 3rem; grid-template-columns: 1fr; gap: 2.5rem; }
       #donate { padding: 5rem 3rem; }
       footer { padding: 2.5rem 3rem; }
@@ -130,10 +148,11 @@
       .hero-name { font-size: clamp(2.2rem, 8vw, 3.5rem); }
       .intro-strip { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
       .intro-bar { width: 40px; height: 3px; }
-      .values-grid { grid-template-columns: 1fr; }
+      .values-grid, .policy-grid { grid-template-columns: 1fr; }
       .acc-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      #values, #accomplishments, #newsletter, #donate { padding: 4rem 1.5rem; }
+      #values, #policy, #accomplishments, #newsletter, #donate { padding: 4rem 1.5rem; }
+      .proud-strip { padding: 3rem 1.5rem; }
       footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
       .footer-links { flex-wrap: wrap; gap: 1rem; }
     }
@@ -147,14 +166,16 @@
 <body>
 
   <nav>
-    <a href="#" class="nav-logo"><img src="websitelogo.png" alt="Ty Hapworth" /></a>
+    <a href="#" class="nav-logo"><img src="websitelogo2.jpg" alt="Councillor Ty Hapworth" /></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#values">Values</a></li>
+      <li><a href="#policy">Policy</a></li>
       <li><a href="#accomplishments">Record</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="#donate" class="nav-donate">Donate</a></li>
     </ul>
+    <img src="websitephoto.jpg" alt="Ty Hapworth" class="nav-photo" />
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -163,6 +184,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="toggleMenu()">About</a>
     <a href="#values" onclick="toggleMenu()">Values</a>
+    <a href="#policy" onclick="toggleMenu()">Policy</a>
     <a href="#accomplishments" onclick="toggleMenu()">Record</a>
     <a href="#newsletter" onclick="toggleMenu()">Newsletter</a>
     <a href="#donate" onclick="toggleMenu()">Donate</a>
@@ -172,10 +194,7 @@
     <img class="hero-bg" src="websitephoto.jpg" alt="Councillor Ty Hapworth" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-name">
-        <span>Councillor At-Large · Salem, MA</span>
-        Ty Hapworth
-      </h1>
+      <h1 class="hero-name">Ty Hapworth</h1>
       <p class="hero-tagline">Fighting for a Salem that works for everyone, where housing is affordable, neighborhoods are strong, and every resident has a seat at the table.</p>
       <div class="hero-ctas">
         <a href="#about" class="btn-red">Meet Ty</a>
@@ -186,7 +205,7 @@
 
   <div class="intro-strip">
     <div class="intro-bar"></div>
-    <p>For six years, Ty Hapworth has served Salem as a Councillor At-Large, expanding affordable housing, investing in our parks, protecting historic neighborhoods, and standing up for every resident. <strong>Veteran leadership for Salem.</strong></p>
+    <p>As Salem's longest serving City Councillor, Ty Hapworth has served Salem for years, working tirelessly to expand affordable housing, invest in our parks, protect historic neighborhoods, and stand up for every resident. <strong>Veteran leadership for Salem.</strong></p>
   </div>
 
   <section id="about">
@@ -208,22 +227,67 @@
   </section>
 
   <section id="values">
-    <p class="section-label">What I Stand For</p>
-    <h2 class="section-title">Values</h2>
-    <p class="values-intro">I believe in following my moral compass and doing what is right, despite the personal or professional implications. I believe in having the courage to admit I can always learn from others.</p>
+    <p class="section-label">Who I Am</p>
+    <h2 class="section-title" style="color:var(--white)">Values</h2>
     <div class="values-grid">
-      <div class="value-card"><div class="value-number">01</div><div class="value-title">Affordable Housing</div><p class="value-desc">Salem's housing crisis demands bold action, smarter zoning, inclusionary requirements, accessory dwelling units, and real protections for renters and seniors.</p></div>
-      <div class="value-card"><div class="value-number">02</div><div class="value-title">Climate Action</div><p class="value-desc">From street trees and green infrastructure to clean energy leadership and bike connectivity, Salem must protect its coastline and lead as a resilient city.</p></div>
-      <div class="value-card"><div class="value-number">03</div><div class="value-title">Historic Preservation</div><p class="value-desc">Our historic neighborhoods give Salem its identity and pride. Development must honor what makes this city irreplaceable while building for the next generation.</p></div>
-      <div class="value-card"><div class="value-number">04</div><div class="value-title">LGBTQ+ Rights</div><p class="value-desc">Every Salem resident deserves to live, work, and raise a family free from discrimination. I've stood up for our LGBTQ+ neighbors and always will.</p></div>
-      <div class="value-card"><div class="value-number">05</div><div class="value-title">Fiscal Accountability</div><p class="value-desc">Principled, transparent city government means delivering results without excuses. I apply the same accountability I learned in the Army to every budget decision.</p></div>
-      <div class="value-card"><div class="value-number">06</div><div class="value-title">Community and Equity</div><p class="value-desc">A city that works for everyone means investing in public spaces, engaging underserved neighborhoods, and ensuring every voice is heard at the table.</p></div>
+      <div class="value-card">
+        <div class="value-number">01</div>
+        <div class="value-title">Bravery</div>
+        <p class="value-desc">I believe in following my moral compass, and doing what is right, despite the personal or professional implications. I believe in having the courage to admit that I can learn from others. Our family motto is "Be Brave. No Excuses."</p>
+      </div>
+      <div class="value-card">
+        <div class="value-number">02</div>
+        <div class="value-title">Authenticity</div>
+        <p class="value-desc">I say what I mean, and ask for what I think is right. As a mentor to young leaders, I've always encouraged them to be honest and transparent in their interactions.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-number">03</div>
+        <div class="value-title">Empathy</div>
+        <p class="value-desc">I treat others with respect and seek to understand their perspective and point of view regardless of my own opinion. I love a political debate, but always give others the benefit of the doubt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="policy">
+    <p class="section-label">What I Fight For</p>
+    <h2 class="section-title">Policy Priorities</h2>
+    <div class="policy-grid">
+      <div class="policy-card">
+        <div class="policy-icon">🏠</div>
+        <div class="policy-title">Affordable Housing</div>
+        <p class="policy-desc">Salem's housing crisis demands bold action, smarter zoning, inclusionary requirements, accessory dwelling units, and real protections for renters and seniors.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">🌿</div>
+        <div class="policy-title">Climate Action</div>
+        <p class="policy-desc">From street trees and green infrastructure to clean energy leadership and bike connectivity, Salem must protect its coastline and lead as a resilient city.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">🏛️</div>
+        <div class="policy-title">Historic Preservation</div>
+        <p class="policy-desc">Our historic neighborhoods give Salem its identity and pride. Development must honor what makes this city irreplaceable while building for the next generation.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">🏳️‍🌈</div>
+        <div class="policy-title">LGBTQ+ Rights</div>
+        <p class="policy-desc">Every Salem resident deserves to live, work, and raise a family free from discrimination. I've stood up for our LGBTQ+ neighbors and always will.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">📊</div>
+        <div class="policy-title">Fiscal Accountability</div>
+        <p class="policy-desc">Principled, transparent city government means delivering results without excuses. I apply the same accountability I learned in the Army to every budget decision.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">🤝</div>
+        <div class="policy-title">Community and Equity</div>
+        <p class="policy-desc">A city that works for everyone means investing in public spaces, engaging underserved neighborhoods, and ensuring every voice is heard at the table.</p>
+      </div>
     </div>
   </section>
 
   <section id="accomplishments">
-    <p class="section-label">The Record</p>
-    <h2 class="section-title">What We've<br>Done Together</h2>
+    <p class="section-label" style="color:rgba(255,120,120,0.8)">The Record</p>
+    <h2 class="section-title" style="color:var(--white)">What We've<br>Done Together</h2>
     <div class="acc-grid">
       <div class="acc-item"><div class="acc-icon">⚖️</div><div class="acc-text"><h4>Accessory Dwelling Units</h4><p>Made it legal and easier for homeowners to build in-law apartments, helping seniors, families, and renters find affordable options citywide.</p></div></div>
       <div class="acc-item"><div class="acc-icon">🌳</div><div class="acc-text"><h4>Parks Investment</h4><p>Secured generational improvements to Salem's parks, investing in the green infrastructure that brings residents together and builds community.</p></div></div>
@@ -234,11 +298,8 @@
     </div>
   </section>
 
-  <div class="photo-break">
-    <img src="fullsize.jpg" alt="Salem Common" />
-    <div class="photo-break-overlay">
-      <p class="photo-break-text">Proud to serve Salem.<br>Every day.</p>
-    </div>
+  <div class="proud-strip">
+    <p class="proud-strip-text">Proud to serve Salem. Every day.</p>
   </div>
 
   <section id="newsletter">
@@ -257,13 +318,13 @@
         <input type="text" class="form-input" placeholder="ZIP Code" />
         <button type="submit" class="btn-red-full">Sign Up</button>
       </form>
-      <p id="signup-confirm" style="display:none; margin-top:1rem; font-weight:600; color:rgba(255,255,255,0.9); font-size:0.95rem;">Thanks! You're on the list.</p>
+      <p id="signup-confirm" style="display:none; margin-top:1rem; font-weight:600; color:var(--navy); font-size:0.95rem;">Thanks! You're on the list.</p>
     </div>
   </section>
 
   <section id="donate">
-    <p class="section-label">Support the Campaign</p>
-    <h2 class="section-title">Chip In for Salem</h2>
+    <p class="section-label" style="color:rgba(255,120,120,0.8)">Support the Campaign</p>
+    <h2 class="section-title" style="color:var(--white)">Chip In for Salem</h2>
     <p class="donate-desc">Every contribution, large or small, helps keep this campaign going and Salem moving forward.</p>
     <div class="donate-amounts">
       <button class="donate-amount" onclick="setAmount(this)">$10</button>
@@ -273,14 +334,15 @@
       <button class="donate-amount" onclick="setAmount(this)">$250</button>
     </div>
     <a href="mailto:info@tyhapworth.com" class="donate-btn">Donate Now</a>
-    <p style="margin-top:1.5rem; font-size:0.73rem; color:rgba(13,31,60,0.35); letter-spacing:0.05em;">Paid for by the Committee to Elect Ty Hapworth</p>
+    <p style="margin-top:1.5rem; font-size:0.73rem; color:rgba(255,255,255,0.3); letter-spacing:0.05em;">Paid for by the Committee to Elect Ty Hapworth</p>
   </section>
 
   <footer>
-    <div class="footer-logo"><img src="websitelogo.png" alt="Ty Hapworth" /></div>
+    <div class="footer-logo"><img src="websitelogo2.jpg" alt="Councillor Ty Hapworth" /></div>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#values">Values</a></li>
+      <li><a href="#policy">Policy</a></li>
       <li><a href="#accomplishments">Record</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="mailto:info@tyhapworth.com">Contact</a></li>
@@ -295,7 +357,7 @@
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.value-card, .acc-item').forEach(el => {
+    document.querySelectorAll('.value-card, .policy-card, .acc-item').forEach(el => {
       el.style.opacity='0'; el.style.transform='translateY(18px)'; el.style.transition='opacity 0.5s ease, transform 0.5s ease'; observer.observe(el);
     });
   </script>
