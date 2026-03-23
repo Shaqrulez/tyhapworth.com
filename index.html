@@ -16,7 +16,6 @@
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 76px; background: var(--navy); border-bottom: 3px solid var(--red); }
-    .nav-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: #e8a0a0; }
@@ -25,12 +24,14 @@
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
 
     /* HERO */
-    .hero { position: relative; height: 100vh; min-height: 680px; display: flex; align-items: flex-end; overflow: hidden; }
+    .hero { position: relative; height: 100vh; min-height: 680px; display: flex; align-items: center; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(13,31,60,0.3) 0%, rgba(13,31,60,0.1) 40%, rgba(13,31,60,0.72) 68%, rgba(13,31,60,0.95) 100%); }
-    .hero-content { position: relative; z-index: 2; padding: 0 5rem 6rem; max-width: 900px; }
-    .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 0.8rem; letter-spacing: -0.01em; }
-    .hero-sub { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.72); letter-spacing: 0.08em; margin-bottom: 2.5rem; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(13,31,60,0.78); }
+    .hero-content { position: relative; z-index: 2; padding: 0 5rem; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+    .hero-text { flex: 1; }
+    .hero-photo { flex-shrink: 0; width: 340px; height: 420px; object-fit: cover; object-position: center top; border-radius: 4px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); border: 3px solid var(--red); }
+    .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 900; color: var(--white); line-height: 1.0; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+    .hero-sub { font-size: clamp(1rem, 1.5vw, 1.3rem); font-weight: 300; color: rgba(255,255,255,0.8); letter-spacing: 0.06em; margin-bottom: 2.5rem; }
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-red { display: inline-block; padding: 0.9rem 2rem; background: var(--red); color: var(--white); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s, transform 0.15s; }
     .btn-red:hover { background: #aa1a1a; transform: translateY(-1px); }
@@ -169,7 +170,7 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .hero-content { padding: 0 1.5rem 4rem; }
+      .hero-content { padding: 0 1.5rem; flex-direction: column; text-align: center; } .hero-photo { width: 200px; height: 240px; } .hero-ctas { justify-content: center; }
       .hero-name { font-size: clamp(2.2rem, 8vw, 3.5rem); }
       .intro-strip { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
       .intro-bar { width: 40px; height: 3px; }
@@ -192,7 +193,6 @@
 <body>
 
   <nav>
-    <a href="#" class="nav-name">Ty Hapworth</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#values">Values</a></li>
@@ -216,15 +216,18 @@
   </div>
 
   <section class="hero">
-    <img class="hero-bg" src="fullsize.jpg" alt="Salem Common at sunrise" />
+    <img class="hero-bg" src="pridephoto.jpg" alt="Ty Hapworth at Salem Pride" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-name">Ty Hapworth</h1>
-      <p class="hero-sub">Salem's City Councillor At-Large since 2020</p>
-      <div class="hero-ctas">
-        <a href="#about" class="btn-red">Meet Ty</a>
-        <a href="#newsletter" class="btn-outline">Join the Newsletter</a>
+      <div class="hero-text">
+        <h1 class="hero-name">Ty Hapworth</h1>
+        <p class="hero-sub">Salem's City Councillor At-Large since 2020</p>
+        <div class="hero-ctas">
+          <a href="#about" class="btn-red">Meet Ty</a>
+          <a href="#newsletter" class="btn-outline">Join the Newsletter</a>
+        </div>
       </div>
+      <img class="hero-photo" src="heroshot.png" alt="Ty Hapworth" />
     </div>
   </section>
 
@@ -341,16 +344,99 @@
       <p class="newsletter-desc">Get updates on Salem city government, community news, and Ty's work on the Council delivered directly to your inbox.</p>
     </div>
     <div>
-      <form class="newsletter-form" onsubmit="handleSignup(event)">
-        <div class="form-row">
-          <input type="text" class="form-input" placeholder="First Name" required />
-          <input type="text" class="form-input" placeholder="Last Name" required />
+      <style type="text/css">
+        #mlb2-27968329.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0; position: static; width: 100% !important; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper { background-color: transparent; border-width: 0; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; width: 100%; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 100%; width: 100%; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody { padding: 0; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent { display: none; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+          background-color: rgba(255,255,255,0.07) !important;
+          color: #ffffff !important;
+          border-color: rgba(255,255,255,0.18) !important;
+          border-radius: 2px !important;
+          border-style: solid !important;
+          border-width: 1.5px !important;
+          font-family: 'Source Sans 3', sans-serif;
+          font-size: 0.95rem !important;
+          padding: 0.85rem 1rem !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          margin-bottom: 0.9rem;
+        }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder { color: rgba(255,255,255,0.32) !important; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus { border-color: rgba(255,255,255,0.5) !important; background-color: rgba(255,255,255,0.11) !important; outline: none; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin: 0; float: left; width: 100%; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+          background-color: #cc2222 !important;
+          border: none !important;
+          border-radius: 2px !important;
+          color: #ffffff !important;
+          cursor: pointer;
+          font-family: 'Source Sans 3', sans-serif !important;
+          font-size: 0.78rem !important;
+          font-weight: 700 !important;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          padding: 0.95rem !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #aa1a1a !important; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 { color: #ffffff; font-family: 'Source Sans 3', sans-serif; font-size: 1rem; font-weight: 700; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p { color: rgba(255,255,255,0.7); font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent { margin: 0; }
+        #mlb2-27968329.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { margin: 0; }
+        .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+        .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #ffffff #ffffff #ffffff transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+        @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+      </style>
+
+      <div id="mlb2-27968329" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-27968329">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent" style="display:none"></div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1631714/forms/158913436099544628/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email Address" autocomplete="email">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Sign Up</button>
+                  <button disabled="disabled" style="display:none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display:none">
+              <div class="ml-form-successContent">
+                <h4>Thanks!</h4>
+                <p>You're on the list.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <input type="email" class="form-input" placeholder="Email Address" required />
-        <input type="text" class="form-input" placeholder="ZIP Code" />
-        <button type="submit" class="btn-red-full">Sign Up</button>
-      </form>
-      <p id="signup-confirm" style="display:none; margin-top:1rem; font-weight:600; color:var(--navy); font-size:0.95rem;">Thanks! You're on the list.</p>
+      </div>
+
+      <script>
+        function ml_webform_success_27968329() {
+          var $ = ml_jQuery || jQuery;
+          $('.ml-subscribe-form-27968329 .row-success').show();
+          $('.ml-subscribe-form-27968329 .row-form').hide();
+        }
+      </script>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+      <script>fetch("https://assets.mailerlite.com/jsonp/1631714/forms/158913436099544628/takel")</script>
     </div>
   </section>
 
@@ -365,7 +451,7 @@
       <button class="donate-amount" onclick="setAmount(this)">$100</button>
       <button class="donate-amount" onclick="setAmount(this)">$250</button>
     </div>
-    <a href="/cdn-cgi/l/email-protection#ea83848c85aa9e93828b9a9d85989e82c4898587" class="donate-btn">Donate Now</a>
+    <a href="https://secure.actblue.com/donate/tyforsalem" target="_blank" class="donate-btn">Donate Now</a>
     <p style="margin-top:1.5rem; font-size:0.73rem; color:rgba(255,255,255,0.3); letter-spacing:0.05em;">Paid for by the Committee to Elect Ty Hapworth</p>
   </section>
 
